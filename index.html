@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasinoTopFinder24</title>
+    <meta
+      name="description"
+      content="Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung."
+    />
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --dark: #0f172a;
+        --dark-2: #1e293b;
+        --accent: #111827;
+        --pill: #f1f5f9;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+        border-bottom: 1px solid var(--border);
+        padding: 64px 0;
+      }
+
+      .lang-wrap {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 24px;
+      }
+
+      .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 6px;
+        box-shadow: var(--shadow);
+      }
+
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        padding: 10px 14px;
+        border-radius: 12px;
+        cursor: pointer;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .lang-switch button.active {
+        background: var(--dark);
+        color: white;
+      }
+
+      h1 {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.08;
+      }
+
+      .subtitle {
+        max-width: 760px;
+        margin: 18px auto 0;
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .pill {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .cards {
+        display: grid;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1fr auto;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .logo-box {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .logo-box img {
+        max-width: 42px;
+        max-height: 42px;
+        object-fit: contain;
+      }
+
+      .casino-name {
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+
+      .stars {
+        margin-top: 8px;
+        color: #eab308;
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+      }
+
+      .label {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+
+      .value {
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .benefits {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .cta-wrap {
+        text-align: right;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent);
+        color: white;
+        padding: 14px 22px;
+        border-radius: 18px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .dark-box {
+        background: var(--dark);
+        color: white;
+        border-radius: 28px;
+        padding: 36px 24px;
+        text-align: center;
+      }
+
+      .dark-box p {
+        color: #cbd5e1;
+        margin: 10px 0 0;
+      }
+
+      .notice {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 22px;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 0.95rem;
+      }
+
+      footer {
+        background: white;
+        border-top: 1px solid var(--border);
+      }
+
+      .footer-inner {
+        padding: 28px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 980px) {
+        .card {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .cta-wrap {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero,
+        .section {
+          padding: 44px 0;
+        }
+
+        .card {
+          grid-template-columns: 1fr;
+          padding: 22px;
+        }
+
+        .casino-name {
+          font-size: 1.35rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <div class="lang-wrap">
+          <div class="lang-switch">
+            <span style="padding-left: 8px; color: #64748b">🌐</span>
+            <button id="btn-de" class="active" type="button">DE</button>
+            <button id="btn-en" type="button">EN</button>
+          </div>
+        </div>
+
+        <h1 id="title">Online Casino Vergleich 2026</h1>
+        <p class="subtitle" id="subtitle">
+          Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung.
+        </p>
+
+        <div class="pills">
+          <div class="pill" id="pill1">✓ Bonus Angebote</div>
+          <div class="pill" id="pill2">✓ Schnelle Auszahlung</div>
+          <div class="pill" id="pill3">✓ Malta Lizenz (MGA)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="dark-box">
+          <h3 id="sectionTitle" style="margin: 0; font-size: 2rem">Internationale Online Casinos vergleichen</h3>
+          <p id="sectionText">Nur für Personen ab 18 Jahren. Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="notice">
+          <strong id="noticeLabel">Hinweis:</strong>
+          <span id="noticeText"> Diese Vergleichsseite richtet sich an internationale Nutzer. Glücksspiel ist erst ab 18 Jahren erlaubt. Bitte spiele verantwortungsvoll.</span>
+          <span id="helpText"> Informationen zu Hilfe bei Spielsucht unter:</span>
+          <a href="https://www.bzga.de" target="_blank" rel="noreferrer" style="text-decoration: underline"> bzga.de </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <span>© 2026 Casino Comparison</span>
+        <div class="footer-links">
+          <a href="#" id="imprint">Impressum</a>
+          <a href="#" id="privacy">Datenschutz</a>
+          <a href="#" id="disclaimer">Disclaimer</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const casinos = [
+        {
+          name: "Stake",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stake.com_logo.svg/512px-Stake.com_logo.svg.png",
+          bonusDe: "Willkommensbonus bis 1000€",
+          bonusEn: "Welcome bonus up to €1000",
+          tagDe: "Crypto Casino",
+          tagEn: "Crypto casino",
+          link: "https://stake.com"
+        },
+        {
+          name: "BitStarz",
+          logo: "https://bitstarz.com/wp-content/themes/bitstarz/assets/img/logo.svg",
+          bonusDe: "Bonus bis 500€ + Freispiele",
+          bonusEn: "Bonus up to €500 + free spins",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "https://bitstarz.com"
+        },
+        {
+          name: "PlayOJO",
+          logo: "https://www.playojo.com/assets/img/logo.svg",
+          bonusDe: "Freispiele ohne Umsatzbedingungen",
+          bonusEn: "Free spins with no wagering",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "https://playojo.com"
+        },
+        {
+          name: "Wildz",
+          logo: "https://www.wildz.com/assets/logo.svg",
+          bonusDe: "Bonus bis 500€",
+          bonusEn: "Bonus up to €500",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "https://wildz.com"
+        }
+      ];
+
+      const translations = {
+        de: {
+          title: "Online Casino Vergleich 2026",
+          subtitle: "Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung.",
+          pill1: "✓ Bonus Angebote",
+          pill2: "✓ Schnelle Auszahlung",
+          pill3: "✓ Malta Lizenz (MGA)",
+          bonus: "Bonus",
+          benefits: "Vorteile",
+          fast: "✓ Schnelle Auszahlung",
+          popular: "✓ Beliebt bei Spielern",
+          cta: "Jetzt spielen →",
+          sectionTitle: "Internationale Online Casinos vergleichen",
+          sectionText: "Nur für Personen ab 18 Jahren. Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.",
+          noticeLabel: "Hinweis:",
+          noticeText: " Diese Vergleichsseite richtet sich an internationale Nutzer. Glücksspiel ist erst ab 18 Jahren erlaubt. Bitte spiele verantwortungsvoll.",
+          helpText: " Informationen zu Hilfe bei Spielsucht unter:",
+          imprint: "Impressum",
+          privacy: "Datenschutz",
+          disclaimer: "Disclaimer"
+        },
+        en: {
+          title: "Online Casino Comparison 2026",
+          subtitle: "Compare international online casinos by bonus, payouts and rating.",
+          pill1: "✓ Bonus offers",
+          pill2: "✓ Fast payouts",
+          pill3: "✓ Malta license (MGA)",
+          bonus: "Bonus",
+          benefits: "Benefits",
+          fast: "✓ Fast payouts",
+          popular: "✓ Popular with players",
+          cta: "Play now →",
+          sectionTitle: "Compare international online casinos",
+          sectionText: "18+ only. Gambling can be addictive. Please play responsibly.",
+          noticeLabel: "Notice:",
+          noticeText: " This comparison page is intended for international users. Gambling is allowed for adults only. Please play responsibly.",
+          helpText: " Information on gambling support:",
+          imprint: "Imprint",
+          privacy: "Privacy",
+          disclaimer: "Disclaimer"
+        }
+      };
+
+      let currentLang = "de";
+
+      function renderCards() {
+        const t = translations[currentLang];
+        const cards = document.getElementById("cards");
+        cards.innerHTML = casinos.map((casino) => `
+          <div class="card">
+            <div class="brand">
+              <div class="logo-box">
+                <img src="${casino.logo}" alt="${casino.name}" />
+              </div>
+              <div>
+                <div class="casino-name">${casino.name}</div>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div>
+              <div class="label">${t.bonus}</div>
+              <div class="value">${currentLang === "de" ? casino.bonusDe : casino.bonusEn}</div>
+            </div>
+            <div>
+              <div class="label">${t.benefits}</div>
+              <ul class="benefits">
+                <li>${t.fast}</li>
+                <li>✓ ${currentLang === "de" ? casino.tagDe : casino.tagEn}</li>
+                <li>${t.popular}</li>
+              </ul>
+            </div>
+            <div class="cta-wrap">
+              <a class="btn" href="${casino.link}" target="_blank" rel="noreferrer">${t.cta}</a>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      function renderText() {
+        const t = translations[currentLang];
+        document.documentElement.lang = currentLang;
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("subtitle").textContent = t.subtitle;
+        document.getElementById("pill1").textContent = t.pill1;
+        document.getElementById("pill2").textContent = t.pill2;
+        document.getElementById("pill3").textContent = t.pill3;
+        document.getElementById("sectionTitle").textContent = t.sectionTitle;
+        document.getElementById("sectionText").textContent = t.sectionText;
+        document.getElementById("noticeLabel").textContent = t.noticeLabel;
+        document.getElementById("noticeText").textContent = t.noticeText;
+        document.getElementById("helpText").textContent = t.helpText;
+        document.getElementById("imprint").textContent = t.imprint;
+        document.getElementById("privacy").textContent = t.privacy;
+        document.getElementById("disclaimer").textContent = t.disclaimer;
+        document.getElementById("btn-de").classList.toggle("active", currentLang === "de");
+        document.getElementById("btn-en").classList.toggle("active", currentLang === "en");
+        renderCards();
+      }
+
+      document.getElementById("btn-de").addEventListener("click", () => {
+        currentLang = "de";
+        renderText();
+      });
+
+      document.getElementById("btn-en").addEventListener("click", () => {
+        currentLang = "en";
+        renderText();
+      });
+
+      renderText();
+    </script>
+  </body>
+</html>
