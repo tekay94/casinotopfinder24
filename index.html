@@ -201,6 +201,14 @@
         opacity:0.7;
       }
 
+      .card-divider{
+        grid-column:1 / -1;
+        height:1px;
+        background:var(--border);
+        margin:6px 0 6px 0;
+        opacity:.8;
+      }
+
       .benefits {
         list-style: none;
         padding: 0;
@@ -551,7 +559,9 @@
             <div>
               <div class="label">${t.bonus}</div>
               <div class="value">${currentLang === "de" ? casino.bonusDe : casino.bonusEn}</div>
-              <div class="divider"></div>
+            </div>
+            <div class="card-divider"></div>
+            <div>
             </div>
             <div>
               <div class="label">${t.benefits}</div>
