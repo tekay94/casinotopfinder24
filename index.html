@@ -610,7 +610,7 @@
         cards.innerHTML = casinos.map((casino, index) => `
           <div class="card">
             <div class="rank-badge">#${index+1}</div>
-            ${index === 0 ? '<div class="card-badge">Top Empfehlung</div>' : ''}
+            ${index === 0 ? `<div class="card-badge">${currentLang === "de" ? "Top Empfehlung" : "Top Pick"}</div>` : ''}
             <div class="brand">
               <div class="logo-box">${casino.name.slice(0,2).toUpperCase()}</div>
               <div>
@@ -618,8 +618,8 @@
                 <div class="stars">★★★★★</div>
                 <div class="trustpilot">⭐ Trustpilot <strong>4.8</strong> / 5</div>
                 <div class="badge-row">
-                  <div class="mini-badge">Top Bonus</div>
-                  <div class="mini-badge">Schnelle Auszahlung</div>
+                  <div class="mini-badge">${currentLang === "de" ? "Top Bonus" : "Top Bonus"}</div>
+                  <div class="mini-badge">${currentLang === "de" ? "Schnelle Auszahlung" : "Fast Payouts"}</div>
                 </div>
               </div>
             </div>
@@ -631,18 +631,18 @@
             <div>
             </div>
             <div class="benefits-wrap">
-              <div class="benefit-group-title">Vorteile</div>
+              <div class="benefit-group-title">${currentLang === "de" ? "Vorteile" : "Benefits"}</div>
               <ul class="benefits">
                 <li>✓ Schnelle Auszahlung</li>
                 <li>✓ ${currentLang === "de" ? casino.tagDe : casino.tagEn}</li>
                 <li>✓ Beliebt bei Spielern</li>
               </ul>
 
-              <div class="benefit-group-title">Zahlungsmethoden</div>
+              <div class="benefit-group-title">${currentLang === "de" ? "Zahlungsmethoden" : "Payment Methods"}</div>
               <ul class="benefits">
                 <li>💳 PayPal / Visa / Mastercard</li>
-                <li>⚡ Trustly / Sofort</li>
-                <li>₿ Crypto verfügbar</li>
+                <li>⚡ Trustly / ${currentLang === "de" ? "Sofort" : "Instant"}</li>
+                <li>₿ ${currentLang === "de" ? "Crypto verfügbar" : "Crypto available"}</li>
               </ul>
             </div>
             <div class="cta-wrap">
