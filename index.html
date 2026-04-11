@@ -1,212 +1,806 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CasinoTopFinder24</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasinoTopFinder24</title>
+    <meta
+      name="description"
+      content="Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung."
+    />
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --dark: #0f172a;
+        --dark-2: #1e293b;
+        --accent: #111827;
+        --pill: #f1f5f9;
+        --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        --radius: 24px;
+      }
 
-<meta name="description" content="Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung." />
+      * {
+        box-sizing: border-box;
+      }
 
-<style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
 
-:root {
---bg:#f8fafc;
---card:#ffffff;
---text:#0f172a;
---muted:#64748b;
---border:#e2e8f0;
---dark:#0f172a;
---shadow:0 10px 30px rgba(15,23,42,0.08);
-}
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-*{box-sizing:border-box;}
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
 
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-background:var(--bg);
-color:var(--text);
-}
+      .hero {
+        background:
+          radial-gradient(circle at top right, rgba(239, 68, 68, 0.18), transparent 28%),
+          radial-gradient(circle at top left, rgba(15, 23, 42, 0.08), transparent 24%),
+          linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #eef2f7 100%);
+        border-bottom: 1px solid var(--border);
+        padding: 72px 0 56px;
+      }
 
-.container{
-width:min(1120px,calc(100% - 32px));
-margin:0 auto;
-}
+      .lang-wrap {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 24px;
+      }
 
-.hero{
-padding:60px 0;
-text-align:center;
-}
+      .lang-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 6px;
+        box-shadow: var(--shadow);
+      }
 
-.cards{
-display:grid;
-gap:24px;
-}
+      .lang-switch button {
+        border: 0;
+        background: transparent;
+        padding: 10px 14px;
+        border-radius: 12px;
+        cursor: pointer;
+        color: var(--muted);
+        font-weight: 600;
+      }
 
-.card{
-background:white;
-border:1px solid var(--border);
-border-radius:24px;
-padding:30px;
-display:grid;
-grid-template-columns:1fr auto;
-align-items:center;
-box-shadow:var(--shadow);
-}
+      .lang-switch button.active {
+        background: var(--dark);
+        color: white;
+      }
 
-.brand{
-display:flex;
-gap:20px;
-align-items:center;
-}
+      h1 {
+        margin: 0;
+        text-align: center;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1.08;
+      }
 
-.logo-box{
-width:70px;
-height:70px;
-border-radius:16px;
-border:1px solid var(--border);
-display:flex;
-align-items:center;
-justify-content:center;
-background:white;
-}
+      .subtitle {
+        max-width: 760px;
+        margin: 18px auto 0;
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
 
-.logo-box img{
-width:90%;
-}
+      .pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 28px;
+      }
 
-.casino-name{
-font-size:1.6rem;
-font-weight:700;
-}
+      .pill {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+      }
 
-.btn{
-background:#0f172a;
-color:white;
-padding:14px 20px;
-border-radius:14px;
-font-weight:700;
-text-decoration:none;
-}
+      .section {
+        padding: 64px 0;
+      }
 
-.btn.disabled{
-background:#94a3b8;
-pointer-events:none;
-}
+      .cards {
+        display: grid;
+        gap: 24px;
+      }
 
-.btn:hover{
-opacity:0.9;
-}
+      .card {
+        position: relative;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border: 1px solid var(--border);
+        border-radius: 32px;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 1fr auto;
+        gap: 24px;
+        align-items: center;
+      }
 
-</style>
-</head>
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
 
-<body>
+      .logo-box {
+        width: 68px;
+        height: 68px;
+        border-radius: 20px;
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: #ffffff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
 
-<section class="hero">
-<div class="container">
-<h1>Online Casino Vergleich 2026</h1>
-<p>Vergleiche internationale Online Casinos</p>
-</div>
-</section>
+      .logo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 8px;
+      }
 
-<section>
-<div class="container">
-<div class="cards" id="cards"></div>
-</div>
-</section>
+      .casino-name {
+        font-size: 1.85rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
 
-<script>
+      .stars {
+        margin-top: 8px;
+        color: #eab308;
+        letter-spacing: 1px;
+        font-size: 1.15rem;
+      }
 
-const casinos = [
+      .trustpilot {
+        margin-top: 6px;
+        font-size: 0.85rem;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-{
-name:"BitStarz",
-logo:"https://upload.wikimedia.org/wikipedia/commons/7/7c/BitStarz_logo.png",
-bonus:"Bonus bis 500€ + Freispiele",
-link:"https://bzstarz1.com/bk5rodcnf",
-active:true
-},
+      .trustpilot strong {
+        color: #16a34a;
+      }
 
-{
-name:"Wildz",
-logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wildz_logo.png/320px-Wildz_logo.png",
-bonus:"Bonus bis 500€",
-link:"#",
-active:false
-},
+      .label {
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
+      }
 
-{
-name:"Spinz",
-logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Spinz_logo.png/320px-Spinz_logo.png",
-bonus:"Bonus bis 300€",
-link:"#",
-active:false
-},
+      .value {
+        font-weight: 800;
+        line-height: 1.45;
+        font-size: 1.18rem;
+      }
 
-{
-name:"Caxino",
-logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Caxino_logo.png/320px-Caxino_logo.png",
-bonus:"Bonus bis 400€",
-link:"#",
-active:false
-},
+      .benefits {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        font-size: 1rem;
+        line-height: 1.9;
+      }
 
-{
-name:"Chipz",
-logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Chipz_logo.png/320px-Chipz_logo.png",
-bonus:"Bonus bis 300€",
-link:"#",
-active:false
-},
+      .benefit-group-title {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        margin-top: 10px;
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
 
-{
-name:"N1 Casino",
-logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/N1casino_logo.png/320px-N1casino_logo.png",
-bonus:"Bonus bis 450€",
-link:"#",
-active:false
-}
+      .benefits li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
 
-];
+      .benefits-wrap {
+        border-top: 1px solid var(--border);
+        padding-top: 18px;
+        margin-top: 18px;
+      }
 
-function render(){
+      .cta-wrap {
+        text-align: right;
+      }
 
-const container=document.getElementById("cards");
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #0f172a, #111827);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 18px;
+        font-weight: 800;
+        white-space: nowrap;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
 
-container.innerHTML=casinos.map(casino=>`
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.96;
+      }
 
-<div class="card">
+      .btn.disabled {
+        background: linear-gradient(135deg, #94a3b8, #64748b);
+        cursor: default;
+        pointer-events: none;
+        box-shadow: none;
+      }
 
-<div class="brand">
+      .dark-box {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        border-radius: 30px;
+        padding: 42px 28px;
+        text-align: center;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+      }
 
-<div class="logo-box">
-<img src="${casino.logo}">
-</div>
+      .dark-box p {
+        color: #cbd5e1;
+        margin: 10px 0 0;
+      }
 
-<div>
-<div class="casino-name">${casino.name}</div>
-<div>${casino.bonus}</div>
-</div>
+      .notice {
+        background: white;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 24px;
+        color: var(--muted);
+        line-height: 1.85;
+        font-size: 0.96rem;
+        box-shadow: var(--shadow);
+      }
 
-</div>
+      footer {
+        background: white;
+        border-top: 1px solid var(--border);
+      }
 
-<div>
-${casino.active 
-? `<a class="btn" href="${casino.link}" target="_blank" rel="nofollow sponsored">Jetzt spielen</a>`
-: `<span class="btn disabled">Link folgt</span>`
-}
-</div>
+      .footer-inner {
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
 
-</div>
+      .top-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.05);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        color: #0f172a;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
 
-`).join("");
+      .card-badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #fee2e2;
+        color: #991b1b;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
 
-}
+      .rank-badge {
+        position: absolute;
+        left: -12px;
+        top: 22px;
+        background: #0f172a;
+        color: white;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
 
-render();
+      .badge-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+      }
 
-</script>
+      .mini-badge {
+        background: #f1f5f9;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
 
-</body>
+      .payment-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .payment-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .payment-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #0f172a;
+        opacity: 0.85;
+      }
+
+      .legal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 1000;
+      }
+
+      .legal-box {
+        width: min(760px, 100%);
+        background: white;
+        border-radius: 28px;
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+        padding: 28px;
+        max-height: 85vh;
+        overflow: auto;
+      }
+
+      .legal-close {
+        display: inline-flex;
+        margin-top: 20px;
+        background: #0f172a;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 14px;
+        cursor: pointer;
+        border: 0;
+        font-weight: 700;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 980px) {
+        .card {
+          grid-template-columns: 1fr 1fr;
+          padding-top: 58px;
+        }
+
+        .cta-wrap {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .hero,
+        .section {
+          padding: 44px 0;
+        }
+
+        .card {
+          grid-template-columns: 1fr;
+          padding: 22px;
+          padding-top: 56px;
+        }
+
+        .casino-name {
+          font-size: 1.45rem;
+        }
+
+        .card-badge {
+          top: 14px;
+          left: 14px;
+          right: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="container">
+        <div class="lang-wrap">
+          <div class="lang-switch">
+            <span style="padding-left: 8px; color: #64748b">🌐</span>
+            <button id="btn-de" class="active" type="button">DE</button>
+            <button id="btn-en" type="button">EN</button>
+          </div>
+        </div>
+
+        <div style="text-align:center">
+          <div class="top-badge">⭐ Vergleich • Bonus • Auszahlungen • 2026</div>
+          <h1 id="title">Online Casino Vergleich 2026</h1>
+        </div>
+        <p class="subtitle" id="subtitle">
+          Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung.
+        </p>
+
+        <div class="pills">
+          <div class="pill" id="pill1">✓ Bonus Angebote</div>
+          <div class="pill" id="pill2">✓ Schnelle Auszahlung</div>
+          <div class="pill" id="pill3">✓ Malta Lizenz (MGA)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cards" id="cards"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="dark-box">
+          <h3 id="sectionTitle" style="margin: 0; font-size: 2rem">Internationale Online Casinos vergleichen</h3>
+          <p id="sectionText">Nur für Personen ab 18 Jahren. Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <div class="notice">
+          <strong id="noticeLabel">Hinweis:</strong>
+          <span id="noticeText"> Diese Vergleichsseite richtet sich an internationale Nutzer. Glücksspiel ist erst ab 18 Jahren erlaubt. Bitte spiele verantwortungsvoll.</span>
+          <span id="helpText"> Informationen zu Hilfe bei Spielsucht unter:</span>
+          <a href="https://www.bzga.de" target="_blank" rel="noopener noreferrer" style="text-decoration: underline"> bzga.de </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-inner">
+        <span>© 2026 CasinoTopFinder24</span>
+        <div class="footer-links">
+          <a href="#" onclick="showImprint(); return false;" id="imprint">Impressum</a>
+          <a href="#" onclick="showPrivacy(); return false;" id="privacy">Datenschutz</a>
+          <a href="#" onclick="showDisclaimer(); return false;" id="disclaimer">Disclaimer</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="legal" class="legal-overlay" onclick="closeLegal(event)">
+      <div class="legal-box">
+        <div id="legalContent"></div>
+        <button class="legal-close" onclick="closeLegal(event)">Schließen</button>
+      </div>
+    </div>
+
+    <script>
+      const casinos = [
+        {
+          name: "BitStarz",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/7/7c/BitStarz_logo.png",
+          bonusDe: "Bonus bis 500€ + Freispiele",
+          bonusEn: "Bonus up to €500 + free spins",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "https://bzstarz1.com/bk5rodcnf",
+          active: true
+        },
+        {
+          name: "Wildz",
+          logo: "",
+          bonusDe: "Bonus bis 500€",
+          bonusEn: "Bonus up to €500",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "#",
+          active: false
+        },
+        {
+          name: "Spinz",
+          logo: "",
+          bonusDe: "Bonus bis 300€",
+          bonusEn: "Bonus up to €300",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "#",
+          active: false
+        },
+        {
+          name: "Caxino",
+          logo: "",
+          bonusDe: "Bonus bis 400€",
+          bonusEn: "Bonus up to €400",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "#",
+          active: false
+        },
+        {
+          name: "Chipz",
+          logo: "",
+          bonusDe: "Bonus bis 300€",
+          bonusEn: "Bonus up to €300",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "#",
+          active: false
+        },
+        {
+          name: "N1 Casino",
+          logo: "",
+          bonusDe: "Bonus bis 450€",
+          bonusEn: "Bonus up to €450",
+          tagDe: "MGA Lizenz",
+          tagEn: "MGA license",
+          link: "#",
+          active: false
+        }
+      ];
+
+      const translations = {
+        de: {
+          title: "Online Casino Vergleich 2026",
+          subtitle: "Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung.",
+          pill1: "✓ Bonus Angebote",
+          pill2: "✓ Schnelle Auszahlung",
+          pill3: "✓ Malta Lizenz (MGA)",
+          bonus: "Bonus",
+          benefits: "Vorteile",
+          fast: "✓ Schnelle Auszahlung",
+          popular: "✓ Beliebt bei Spielern",
+          cta: "Jetzt spielen →",
+          ctaSoon: "Link folgt",
+          sectionTitle: "Internationale Online Casinos vergleichen",
+          sectionText: "Nur für Personen ab 18 Jahren. Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.",
+          noticeLabel: "Hinweis:",
+          noticeText: " Diese Vergleichsseite richtet sich an internationale Nutzer. Glücksspiel ist erst ab 18 Jahren erlaubt. Bitte spiele verantwortungsvoll.",
+          helpText: " Informationen zu Hilfe bei Spielsucht unter:",
+          imprint: "Impressum",
+          privacy: "Datenschutz",
+          disclaimer: "Disclaimer",
+          topPick: "Top Empfehlung",
+          topBonus: "Top Bonus",
+          fastPayouts: "Schnelle Auszahlung",
+          instant: "Sofort"
+        },
+        en: {
+          title: "Online Casino Comparison 2026",
+          subtitle: "Compare international online casinos by bonus, payouts and rating.",
+          pill1: "✓ Bonus offers",
+          pill2: "✓ Fast payouts",
+          pill3: "✓ Malta license (MGA)",
+          bonus: "Bonus",
+          benefits: "Benefits",
+          fast: "✓ Fast payouts",
+          popular: "✓ Popular with players",
+          cta: "Play now →",
+          ctaSoon: "Link coming soon",
+          sectionTitle: "Compare international online casinos",
+          sectionText: "18+ only. Gambling can be addictive. Please play responsibly.",
+          noticeLabel: "Notice:",
+          noticeText: " This comparison page is intended for international users. Gambling is allowed for adults only. Please play responsibly.",
+          helpText: " Information on gambling support:",
+          imprint: "Imprint",
+          privacy: "Privacy",
+          disclaimer: "Disclaimer",
+          topPick: "Top Pick",
+          topBonus: "Top Bonus",
+          fastPayouts: "Fast Payouts",
+          instant: "Instant"
+        }
+      };
+
+      let currentLang = "de";
+
+      function renderLogo(casino) {
+        if (casino.logo) {
+          return `
+            <img
+              src="${casino.logo}"
+              alt="${casino.name} logo"
+              onerror="this.style.display='none'; this.parentNode.textContent='${casino.name.slice(0,2).toUpperCase()}'"
+            />
+          `;
+        }
+        return casino.name.slice(0, 2).toUpperCase();
+      }
+
+      function renderCards() {
+        const t = translations[currentLang];
+        const cards = document.getElementById("cards");
+        cards.innerHTML = casinos.map((casino, index) => `
+          <div class="card">
+            <div class="rank-badge">#${index + 1}</div>
+            ${index === 0 ? `<div class="card-badge">${t.topPick}</div>` : ''}
+            <div class="brand">
+              <div class="logo-box">
+                ${renderLogo(casino)}
+              </div>
+              <div>
+                <div class="casino-name">${casino.name}</div>
+                <div class="stars">★★★★★</div>
+                <div class="trustpilot">⭐ Trustpilot <strong>4.8</strong> / 5</div>
+                <div class="badge-row">
+                  <div class="mini-badge">${currentLang === "de" ? "Top Bonus" : "Top Bonus"}</div>
+                  <div class="mini-badge">${currentLang === "de" ? "Schnelle Auszahlung" : "Fast Payouts"}</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="label">${t.bonus}</div>
+              <div class="value">${currentLang === "de" ? casino.bonusDe : casino.bonusEn}</div>
+            </div>
+            <div class="benefits-wrap">
+              <div class="benefit-group-title">${currentLang === "de" ? "Vorteile" : "Benefits"}</div>
+              <ul class="benefits">
+                <li>${currentLang === "de" ? "✓ Schnelle Auszahlung" : "✓ Fast payouts"}</li>
+                <li>✓ ${currentLang === "de" ? casino.tagDe : casino.tagEn}</li>
+                <li>${currentLang === "de" ? "✓ Beliebt bei Spielern" : "✓ Popular with players"}</li>
+              </ul>
+
+              <div class="benefit-group-title">${currentLang === "de" ? "Zahlungsmethoden" : "Payment Methods"}</div>
+              <div class="payment-icons">
+                <div class="payment-pill"><span class="payment-dot"></span>Visa</div>
+                <div class="payment-pill"><span class="payment-dot"></span>Mastercard</div>
+                <div class="payment-pill"><span class="payment-dot"></span>Trustly</div>
+                <div class="payment-pill"><span class="payment-dot"></span>${currentLang === "de" ? "Sofort" : "Instant"}</div>
+                <div class="payment-pill"><span class="payment-dot"></span>Crypto</div>
+              </div>
+            </div>
+            <div class="cta-wrap">
+              ${
+                casino.active
+                  ? `<a class="btn" href="${casino.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">${t.cta}</a>`
+                  : `<span class="btn disabled">${t.ctaSoon}</span>`
+              }
+            </div>
+          </div>
+        `).join("");
+      }
+
+      function renderText() {
+        const t = translations[currentLang];
+        document.documentElement.lang = currentLang;
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("subtitle").textContent = t.subtitle;
+        document.getElementById("pill1").textContent = t.pill1;
+        document.getElementById("pill2").textContent = t.pill2;
+        document.getElementById("pill3").textContent = t.pill3;
+        document.getElementById("sectionTitle").textContent = t.sectionTitle;
+        document.getElementById("sectionText").textContent = t.sectionText;
+        document.getElementById("noticeLabel").textContent = t.noticeLabel;
+        document.getElementById("noticeText").textContent = t.noticeText;
+        document.getElementById("helpText").textContent = t.helpText;
+        document.getElementById("imprint").textContent = t.imprint;
+        document.getElementById("privacy").textContent = t.privacy;
+        document.getElementById("disclaimer").textContent = t.disclaimer;
+        document.getElementById("btn-de").classList.toggle("active", currentLang === "de");
+        document.getElementById("btn-en").classList.toggle("active", currentLang === "en");
+        renderCards();
+      }
+
+      function showImprint(){
+        document.getElementById('legal').style.display='flex';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p>
+        Firmenname: Klein Marketing 24/7<br>
+        Inhaber: Timm Klein<br>
+        Unternehmensform: Kleingewerbe gemäß § 19 UStG
+        </p>
+        <p>
+        Kontakt:<br>
+        E-Mail: timmklein94@aol.de
+        </p>
+        <p>
+        Hinweis: Die vollständige Geschäftsadresse wird auf Anfrage bereitgestellt.
+        </p>
+        `;
+      }
+
+      function showPrivacy(){
+        document.getElementById('legal').style.display='flex';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Datenschutz</h2>
+        <p>Wir speichern keine persönlichen Daten. Externe Anbieter können Cookies verwenden.</p>
+        `;
+      }
+
+      function showDisclaimer(){
+        document.getElementById('legal').style.display='flex';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Disclaimer</h2>
+        <p>18+ Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.</p>
+        `;
+      }
+
+      function closeLegal(event){
+        if(event.target.id === 'legal' || event.target.classList.contains('legal-close')){
+          document.getElementById('legal').style.display='none';
+        }
+      }
+
+      document.getElementById("btn-de").addEventListener("click", () => {
+        currentLang = "de";
+        renderText();
+      });
+
+      document.getElementById("btn-en").addEventListener("click", () => {
+        currentLang = "en";
+        renderText();
+      });
+
+      renderText();
+    </script>
+  </body>
 </html>
