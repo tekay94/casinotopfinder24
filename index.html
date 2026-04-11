@@ -129,7 +129,7 @@
       .card {
         position: relative;
         background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-        border: 1px solid rgba(226, 232, 240, 0.95);
+        border: 1px solid var(--border);
         border-radius: 32px;
         box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
         padding: 32px;
@@ -150,7 +150,7 @@
         height: 68px;
         border-radius: 20px;
         border: 1px solid rgba(226, 232, 240, 0.95);
-        background: linear-gradient(135deg, #0f172a, #1e293b);
+        background: #ffffff;
         color: white;
         display: flex;
         align-items: center;
@@ -391,6 +391,12 @@
         color:var(--text);
       }
 
+      .payment-pill img{
+        width:18px;
+        height:18px;
+        object-fit:contain;
+      }
+
       .payment-dot{
         width:8px;
         height:8px;
@@ -563,7 +569,7 @@
       const casinos = [
         {
           name: "BitStarz",
-          logo: "https://bitstarz.com/wp-content/themes/bitstarz/assets/img/logo.svg",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/7/7c/BitStarz_logo.png",
           bonusDe: "Bonus bis 500€ + Freispiele",
           bonusEn: "Bonus up to €500 + free spins",
           tagDe: "MGA Lizenz",
@@ -572,7 +578,7 @@
         },
         {
           name: "PlayOJO",
-          logo: "https://www.playojo.com/assets/img/logo.svg",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/3/34/PlayOJO_logo.png",
           bonusDe: "Freispiele ohne Umsatzbedingungen",
           bonusEn: "Free spins with no wagering",
           tagDe: "MGA Lizenz",
@@ -581,7 +587,7 @@
         },
         {
           name: "Wildz",
-          logo: "https://www.wildz.com/assets/logo.svg",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Wildz_logo.png",
           bonusDe: "Bonus bis 500€",
           bonusEn: "Bonus up to €500",
           tagDe: "MGA Lizenz",
@@ -673,7 +679,13 @@
 
               <div class="benefit-group-title">${currentLang === "de" ? "Zahlungsmethoden" : "Payment Methods"}</div>
               <div class="payment-icons">
-                <div class="payment-pill"><span class="payment-dot"></span>PayPal</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/paypal.svg"/>PayPal</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visa.svg"/>Visa</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mastercard.svg"/>Mastercard</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bitcoin.svg"/>Crypto</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/ethereum.svg"/>Ethereum</div>
+                <div class="payment-pill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepay.svg"/>Apple Pay</div>
+              </div>
                 <div class="payment-pill"><span class="payment-dot"></span>Visa</div>
                 <div class="payment-pill"><span class="payment-dot"></span>Mastercard</div>
                 <div class="payment-pill"><span class="payment-dot"></span>Trustly</div>
@@ -765,5 +777,6 @@
     </script>
   </body>
 </html>
+
 
 
