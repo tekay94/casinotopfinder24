@@ -179,6 +179,19 @@
         font-size: 1.15rem;
       }
 
+      .trustpilot{
+        margin-top:6px;
+        font-size:.85rem;
+        color:var(--muted);
+        display:flex;
+        align-items:center;
+        gap:6px;
+      }
+
+      .trustpilot strong{
+        color:#16a34a;
+      }
+
       .label {
         color: var(--muted);
         font-size: 0.92rem;
@@ -321,6 +334,38 @@
         padding: 8px 12px;
         font-size: 0.82rem;
         font-weight: 800;
+      }
+
+      .rank-badge{
+        position:absolute;
+        left:-12px;
+        top:22px;
+        background:#0f172a;
+        color:white;
+        width:42px;
+        height:42px;
+        border-radius:12px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:800;
+        box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      }
+
+      .badge-row{
+        display:flex;
+        gap:8px;
+        margin-top:8px;
+        flex-wrap:wrap;
+      }
+
+      .mini-badge{
+        background:#f1f5f9;
+        border:1px solid var(--border);
+        border-radius:999px;
+        padding:4px 8px;
+        font-size:.75rem;
+        font-weight:600;
       }
 
       .legal-overlay {
@@ -564,12 +609,18 @@
         const cards = document.getElementById("cards");
         cards.innerHTML = casinos.map((casino, index) => `
           <div class="card">
+            <div class="rank-badge">#${index+1}</div>
             ${index === 0 ? '<div class="card-badge">Top Empfehlung</div>' : ''}
             <div class="brand">
               <div class="logo-box">${casino.name.slice(0,2).toUpperCase()}</div>
               <div>
                 <div class="casino-name">${casino.name}</div>
                 <div class="stars">★★★★★</div>
+                <div class="trustpilot">⭐ Trustpilot <strong>4.8</strong> / 5</div>
+                <div class="badge-row">
+                  <div class="mini-badge">Top Bonus</div>
+                  <div class="mini-badge">Schnelle Auszahlung</div>
+                </div>
               </div>
             </div>
             <div>
