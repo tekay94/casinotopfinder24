@@ -217,6 +217,28 @@
         line-height: 1.9;
       }
 
+      .benefit-group-title{
+        font-size:.8rem;
+        text-transform:uppercase;
+        letter-spacing:.08em;
+        color:var(--muted);
+        margin-top:10px;
+        margin-bottom:4px;
+        font-weight:700;
+      }
+
+      .benefits li{
+        display:flex;
+        align-items:center;
+        gap:8px;
+      }
+
+      .benefits-wrap{
+        border-top:1px solid var(--border);
+        padding-top:18px;
+        margin-top:18px;
+      }
+
       .cta-wrap {
         text-align: right;
       }
@@ -563,12 +585,17 @@
             <div class="card-divider"></div>
             <div>
             </div>
-            <div>
+            <div class="benefits-wrap">
               <div class="label">${t.benefits}</div>
+              <div class="benefit-group-title">Vorteile</div>
               <ul class="benefits">
-                <li>${t.fast}</li>
+                <li>✓ Schnelle Auszahlung</li>
                 <li>✓ ${currentLang === "de" ? casino.tagDe : casino.tagEn}</li>
-                <li>${t.popular}</li>
+                <li>✓ Beliebt bei Spielern</li>
+              </ul>
+
+              <div class="benefit-group-title">Zahlungsmethoden</div>
+              <ul class="benefits">
                 <li>💳 PayPal / Visa / Mastercard</li>
                 <li>⚡ Trustly / Sofort</li>
                 <li>₿ Crypto verfügbar</li>
@@ -658,3 +685,4 @@
     </script>
   </body>
 </html>
+
