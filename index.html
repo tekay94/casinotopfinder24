@@ -45,9 +45,12 @@
       }
 
       .hero {
-        background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+        background:
+          radial-gradient(circle at top right, rgba(239, 68, 68, 0.18), transparent 28%),
+          radial-gradient(circle at top left, rgba(15, 23, 42, 0.08), transparent 24%),
+          linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #eef2f7 100%);
         border-bottom: 1px solid var(--border);
-        padding: 64px 0;
+        padding: 72px 0 56px;
       }
 
       .lang-wrap {
@@ -120,74 +123,83 @@
 
       .cards {
         display: grid;
-        gap: 20px;
+        gap: 24px;
       }
 
       .card {
-        background: var(--card);
-        border-radius: 28px;
-        box-shadow: var(--shadow);
-        padding: 28px;
+        position: relative;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        border-radius: 32px;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+        padding: 32px;
         display: grid;
-        grid-template-columns: 1.25fr 1fr 1fr auto;
-        gap: 20px;
+        grid-template-columns: 1.2fr 0.9fr 1fr auto;
+        gap: 24px;
         align-items: center;
       }
 
       .brand {
         display: flex;
         align-items: center;
-        gap: 16px;
+        gap: 18px;
       }
 
       .logo-box {
-        width: 60px;
-        height: 60px;
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        background: white;
+        width: 68px;
+        height: 68px;
+        border-radius: 20px;
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         flex-shrink: 0;
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
       }
 
       .logo-box img {
-        max-width: 42px;
-        max-height: 42px;
-        object-fit: contain;
+        display: none;
       }
 
       .casino-name {
-        font-size: 1.6rem;
-        font-weight: 700;
+        font-size: 1.85rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
       }
 
       .stars {
         margin-top: 8px;
         color: #eab308;
         letter-spacing: 1px;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
       }
 
       .label {
         color: var(--muted);
-        font-size: 0.95rem;
-        margin-bottom: 6px;
+        font-size: 0.92rem;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 700;
       }
 
       .value {
-        font-weight: 600;
-        line-height: 1.5;
+        font-weight: 800;
+        line-height: 1.45;
+        font-size: 1.18rem;
       }
 
       .benefits {
         list-style: none;
         padding: 0;
         margin: 8px 0 0;
-        font-size: 0.96rem;
-        line-height: 1.8;
+        font-size: 1rem;
+        line-height: 1.9;
       }
 
       .cta-wrap {
@@ -197,21 +209,30 @@
       .btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 8px;
-        background: var(--accent);
+        background: linear-gradient(135deg, #0f172a, #111827);
         color: white;
-        padding: 14px 22px;
+        padding: 16px 24px;
         border-radius: 18px;
-        font-weight: 700;
+        font-weight: 800;
         white-space: nowrap;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+        transition: transform 0.15s ease, opacity 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.96;
       }
 
       .dark-box {
-        background: var(--dark);
+        background: linear-gradient(135deg, #0f172a, #1e293b);
         color: white;
-        border-radius: 28px;
-        padding: 36px 24px;
+        border-radius: 30px;
+        padding: 42px 28px;
         text-align: center;
+        box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
       }
 
       .dark-box p {
@@ -222,11 +243,12 @@
       .notice {
         background: white;
         border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 22px;
+        border-radius: 24px;
+        padding: 24px;
         color: var(--muted);
-        line-height: 1.8;
-        font-size: 0.95rem;
+        line-height: 1.85;
+        font-size: 0.96rem;
+        box-shadow: var(--shadow);
       }
 
       footer {
@@ -235,13 +257,72 @@
       }
 
       .footer-inner {
-        padding: 28px 0;
+        padding: 30px 0;
         display: flex;
         justify-content: space-between;
         gap: 16px;
         flex-wrap: wrap;
         color: var(--muted);
         font-size: 0.95rem;
+      }
+
+      .top-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.05);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        color: #0f172a;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .card-badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #fee2e2;
+        color: #991b1b;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .legal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.55);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 1000;
+      }
+
+      .legal-box {
+        width: min(760px, 100%);
+        background: white;
+        border-radius: 28px;
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25);
+        padding: 28px;
+        max-height: 85vh;
+        overflow: auto;
+      }
+
+      .legal-close {
+        display: inline-flex;
+        margin-top: 20px;
+        background: #0f172a;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 14px;
+        cursor: pointer;
+        border: 0;
+        font-weight: 700;
       }
 
       .footer-links {
@@ -253,7 +334,13 @@
       @media (max-width: 980px) {
         .card {
           grid-template-columns: 1fr 1fr;
+          padding-top: 58px;
         }
+
+        .cta-wrap {
+          text-align: left;
+        }
+      }
 
         .cta-wrap {
           text-align: left;
@@ -265,6 +352,23 @@
         .section {
           padding: 44px 0;
         }
+
+        .card {
+          grid-template-columns: 1fr;
+          padding: 22px;
+          padding-top: 56px;
+        }
+
+        .casino-name {
+          font-size: 1.45rem;
+        }
+
+        .card-badge {
+          top: 14px;
+          left: 14px;
+          right: auto;
+        }
+      }
 
         .card {
           grid-template-columns: 1fr;
@@ -288,7 +392,10 @@
           </div>
         </div>
 
-        <h1 id="title">Online Casino Vergleich 2026</h1>
+        <div style="text-align:center">
+          <div class="top-badge">⭐ Vergleich • Bonus • Auszahlungen • 2026</div>
+          <h1 id="title">Online Casino Vergleich 2026</h1>
+        </div>
         <p class="subtitle" id="subtitle">
           Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung.
         </p>
@@ -338,8 +445,11 @@
       </div>
     </footer>
 
-    <div id="legal" style="display:none;padding:40px;max-width:900px;margin:auto;background:white">
-      <div id="legalContent"></div>
+    <div id="legal" class="legal-overlay" onclick="closeLegal(event)">
+      <div class="legal-box">
+        <div id="legalContent"></div>
+        <button class="legal-close" onclick="closeLegal(event)">Schließen</button>
+      </div>
     </div>
 
     <script>
@@ -421,12 +531,11 @@
       function renderCards() {
         const t = translations[currentLang];
         const cards = document.getElementById("cards");
-        cards.innerHTML = casinos.map((casino) => `
+        cards.innerHTML = casinos.map((casino, index) => `
           <div class="card">
+            ${index === 0 ? '<div class="card-badge">Top Empfehlung</div>' : ''}
             <div class="brand">
-              <div class="logo-box">
-                <img src="${casino.logo}" alt="${casino.name}" />
-              </div>
+              <div class="logo-box">${casino.name.slice(0,2).toUpperCase()}</div>
               <div>
                 <div class="casino-name">${casino.name}</div>
                 <div class="stars">★★★★★</div>
@@ -476,7 +585,7 @@
       }
 
       function showImprint(){
-        document.getElementById('legal').style.display='block';
+        document.getElementById('legal').style.display='flex';
         document.getElementById('legalContent').innerHTML=`
         <h2>Impressum</h2>
         <p><strong>Angaben gemäß § 5 TMG</strong></p>
@@ -496,7 +605,7 @@
       }
 
       function showPrivacy(){
-        document.getElementById('legal').style.display='block';
+        document.getElementById('legal').style.display='flex';
         document.getElementById('legalContent').innerHTML=`
         <h2>Datenschutz</h2>
         <p>Wir speichern keine persönlichen Daten. Externe Anbieter können Cookies verwenden.</p>
@@ -504,11 +613,17 @@
       }
 
       function showDisclaimer(){
-        document.getElementById('legal').style.display='block';
+        document.getElementById('legal').style.display='flex';
         document.getElementById('legalContent').innerHTML=`
         <h2>Disclaimer</h2>
         <p>18+ Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.</p>
         `;
+      }
+
+      function closeLegal(event){
+        if(event.target.id === 'legal' || event.target.classList.contains('legal-close')){
+          document.getElementById('legal').style.display='none';
+        }
       }
 
       document.getElementById("btn-de").addEventListener("click", () => {
@@ -525,4 +640,5 @@
     </script>
   </body>
 </html>
+
 
