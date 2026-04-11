@@ -329,26 +329,22 @@
 
     <footer>
       <div class="container footer-inner">
-        <span>© 2026 Casino Comparison</span>
+        <span>© 2026 CasinoTopFinder24</span>
         <div class="footer-links">
-          <a href="#" id="imprint">Impressum</a>
-          <a href="#" id="privacy">Datenschutz</a>
-          <a href="#" id="disclaimer">Disclaimer</a>
+          <a href="#" onclick="showImprint()" id="imprint">Impressum</a>
+          <a href="#" onclick="showPrivacy()" id="privacy">Datenschutz</a>
+          <a href="#" onclick="showDisclaimer()" id="disclaimer">Disclaimer</a>
         </div>
       </div>
     </footer>
 
+    <div id="legal" style="display:none;padding:40px;max-width:900px;margin:auto;background:white">
+      <div id="legalContent"></div>
+    </div>
+
     <script>
       const casinos = [
-        {
-          name: "Stake",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Stake.com_logo.svg/512px-Stake.com_logo.svg.png",
-          bonusDe: "Willkommensbonus bis 1000€",
-          bonusEn: "Welcome bonus up to €1000",
-          tagDe: "Crypto Casino",
-          tagEn: "Crypto casino",
-          link: "https://stake.com"
-        },
+        
         {
           name: "BitStarz",
           logo: "https://bitstarz.com/wp-content/themes/bitstarz/assets/img/logo.svg",
@@ -480,6 +476,46 @@
       document.getElementById("btn-de").addEventListener("click", () => {
         currentLang = "de";
         renderText();
+
+      function showImprint(){
+        document.getElementById('legal').style.display='block';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Impressum</h2>
+        <p><strong>Angaben gemäß § 5 TMG</strong></p>
+        <p>
+        Firmenname: Klein Marketing 24/7<br>
+        Inhaber: Timm Klein<br>
+        Unternehmensform: Kleingewerbe gemäß § 19 UStG
+        </p>
+        <p>
+        Kontakt:<br>
+        E-Mail: timmklein94@aol.de
+        </p>
+        <p>
+        Hinweis: Die vollständige Geschäftsadresse wird auf Anfrage bereitgestellt.
+        </p>
+        <p>
+        Affiliate Hinweis:<br>
+        Diese Website enthält Affiliate-Links. Wenn Nutzer über diese Links ein Konto erstellen oder Einzahlungen tätigen, kann eine Provision entstehen.
+        </p>
+        `;
+      }
+
+      function showPrivacy(){
+        document.getElementById('legal').style.display='block';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Datenschutz</h2>
+        <p>Wir speichern keine persönlichen Daten. Externe Anbieter können Cookies verwenden.</p>
+        `;
+      }
+
+      function showDisclaimer(){
+        document.getElementById('legal').style.display='block';
+        document.getElementById('legalContent').innerHTML=`
+        <h2>Disclaimer</h2>
+        <p>18+ Glücksspiel kann süchtig machen. Bitte verantwortungsvoll spielen.</p>
+        `;
+      }
       });
 
       document.getElementById("btn-en").addEventListener("click", () => {
