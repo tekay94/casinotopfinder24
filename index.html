@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+<!-- Version: Affiliate Ready v2 -->
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CasinoTopFinder24</title>
+    <title>Online Casino Vergleich 2026 | Beste Online Casinos - CasinoTopFinder24</title>
     <meta
       name="description"
-      content="Vergleiche internationale Online Casinos nach Bonus, Auszahlung und Bewertung."
+      content="Beste Online Casinos 2026 vergleichen. Internationale Online Casinos mit Bonus, schneller Auszahlung und MGA Lizenz."
     />
     <style>
       :root {
@@ -127,6 +128,33 @@
       }
 
       .card {
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
+      }
+
+      .card.top3 {
+        border: 2px solid #0f172a;
+        box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+      }
+
+      .top3-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: .75rem;
+        font-weight: 700;
+      }
+
+      .card {
         position: relative;
         background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
         border: 1px solid var(--border);
@@ -150,23 +178,40 @@
         height: 68px;
         border-radius: 20px;
         border: 1px solid rgba(226, 232, 240, 0.95);
-        background: #ffffff;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         flex-shrink: 0;
-        font-size: 1.2rem;
+        font-size: 1.05rem;
         font-weight: 800;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
       }
 
-      .logo-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        padding: 8px;
+      .logo-box.logo-bitstarz {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+      }
+
+      .logo-box.logo-wildz {
+        background: linear-gradient(135deg, #ef4444, #b91c1c);
+      }
+
+      .logo-box.logo-spinz {
+        background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+      }
+
+      .logo-box.logo-caxino {
+        background: linear-gradient(135deg, #06b6d4, #0f766e);
+      }
+
+      .logo-box.logo-chipz {
+        background: linear-gradient(135deg, #22c55e, #15803d);
+      }
+
+      .logo-box.logo-n1 {
+        background: linear-gradient(135deg, #111827, #374151);
       }
 
       .casino-name {
@@ -544,9 +589,11 @@
 
     <script>
       const casinos = [
+        
         {
           name: "BitStarz",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/7/7c/BitStarz_logo.png",
+          short: "BS",
+          logoClass: "logo-bitstarz",
           bonusDe: "Bonus bis 500€ + Freispiele",
           bonusEn: "Bonus up to €500 + free spins",
           tagDe: "MGA Lizenz",
@@ -556,7 +603,9 @@
         },
         {
           name: "Wildz",
-          logo: "",
+          rating: "4.7",
+          short: "WZ",
+          logoClass: "logo-wildz",
           bonusDe: "Bonus bis 500€",
           bonusEn: "Bonus up to €500",
           tagDe: "MGA Lizenz",
@@ -566,7 +615,9 @@
         },
         {
           name: "Spinz",
-          logo: "",
+          rating: "4.6",
+          short: "SZ",
+          logoClass: "logo-spinz",
           bonusDe: "Bonus bis 300€",
           bonusEn: "Bonus up to €300",
           tagDe: "MGA Lizenz",
@@ -576,7 +627,9 @@
         },
         {
           name: "Caxino",
-          logo: "",
+          rating: "4.6",
+          short: "CX",
+          logoClass: "logo-caxino",
           bonusDe: "Bonus bis 400€",
           bonusEn: "Bonus up to €400",
           tagDe: "MGA Lizenz",
@@ -586,7 +639,9 @@
         },
         {
           name: "Chipz",
-          logo: "",
+          rating: "4.5",
+          short: "CZ",
+          logoClass: "logo-chipz",
           bonusDe: "Bonus bis 300€",
           bonusEn: "Bonus up to €300",
           tagDe: "MGA Lizenz",
@@ -596,7 +651,9 @@
         },
         {
           name: "N1 Casino",
-          logo: "",
+          rating: "4.7",
+          short: "N1",
+          logoClass: "logo-n1",
           bonusDe: "Bonus bis 450€",
           bonusEn: "Bonus up to €450",
           tagDe: "MGA Lizenz",
@@ -662,35 +719,26 @@
       let currentLang = "de";
 
       function renderLogo(casino) {
-        if (casino.logo) {
-          return `
-            <img
-              src="${casino.logo}"
-              alt="${casino.name} logo"
-              onerror="this.style.display='none'; this.parentNode.textContent='${casino.name.slice(0,2).toUpperCase()}'"
-            />
-          `;
-        }
-        return casino.name.slice(0, 2).toUpperCase();
+        return `<div class="logo-box ${casino.logoClass}">${casino.short}</div>`;
       }
 
       function renderCards() {
         const t = translations[currentLang];
         const cards = document.getElementById("cards");
         cards.innerHTML = casinos.map((casino, index) => `
-          <div class="card">
+          <div class="card ${index < 3 ? 'top3' : ''}">
+            ${index < 3 ? `<div class="top3-badge">TOP ${index+1}</div>` : ''}
             <div class="rank-badge">#${index + 1}</div>
-            ${index === 0 ? `<div class="card-badge">${t.topPick}</div>` : ''}
+            ${!casino.active ? `<div class="card-badge">Coming Soon</div>` : (index === 0 ? `<div class="card-badge">${t.topPick}</div>` : '')}
+            
             <div class="brand">
-              <div class="logo-box">
-                ${renderLogo(casino)}
-              </div>
+              ${renderLogo(casino)}
               <div>
                 <div class="casino-name">${casino.name}</div>
                 <div class="stars">★★★★★</div>
-                <div class="trustpilot">⭐ Trustpilot <strong>4.8</strong> / 5</div>
+                <div class="trustpilot">⭐ Trustpilot <strong>${casino.rating}</strong> / 5</div>
                 <div class="badge-row">
-                  <div class="mini-badge">${currentLang === "de" ? "Top Bonus" : "Top Bonus"}</div>
+                  ${index === 0 ? `<div class="mini-badge">${currentLang === "de" ? "Top Bonus" : "Top Bonus"}</div><div class="mini-badge">Crypto Friendly</div>` : (index === 1 ? `<div class="mini-badge">${currentLang === "de" ? "Neu" : "New"}</div>` : (index === 2 ? `<div class="mini-badge">${currentLang === "de" ? "Top Rated" : "Top Rated"}</div>` : (casino.name === 'Caxino' ? `<div class="mini-badge">${currentLang === "de" ? "High Bonus" : "High Bonus"}</div>` : (casino.name === 'N1 Casino' ? `<div class="mini-badge">${currentLang === "de" ? "Beste Auszahlung" : "Best Payout"}</div>` : ``))))}
                   <div class="mini-badge">${currentLang === "de" ? "Schnelle Auszahlung" : "Fast Payouts"}</div>
                 </div>
               </div>
