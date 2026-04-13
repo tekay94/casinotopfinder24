@@ -62,6 +62,64 @@
         margin: 0 auto;
       }
 
+      .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        backdrop-filter: blur(12px);
+        background: rgba(255, 255, 255, 0.88);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      }
+
+      .sticky-header-inner {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .site-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .site-brand-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #0f172a, #334155);
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9rem;
+      }
+
+      .sticky-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .sticky-link {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .sticky-link:hover {
+        color: var(--dark);
+      }
+
       .hero {
         background:
           radial-gradient(circle at top right, rgba(239, 68, 68, 0.18), transparent 28%),
@@ -509,6 +567,14 @@
         }
       }
 
+      @media (max-width: 980px) {
+        .sticky-header-inner {
+          padding: 10px 0;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
       @media (max-width: 680px) {
         .hero,
         .section {
@@ -529,6 +595,15 @@
           top: 14px;
           left: 14px;
           right: auto;
+        }
+
+        .sticky-nav {
+          width: 100%;
+        }
+
+        .sticky-link {
+          flex: 1 1 auto;
+          text-align: center;
         }
       }
     </style>
@@ -568,6 +643,19 @@
 
   </head>
   <body>
+    <header class="sticky-header">
+      <div class="container sticky-header-inner">
+        <div class="site-brand">
+          <span class="site-brand-badge">CT</span>
+          <span>CasinoTopFinder24</span>
+        </div>
+        <nav class="sticky-nav">
+          <a href="beste-online-casinos.html" class="sticky-link">Beste Online Casinos</a>
+          <a href="beste-crypto-casinos.html" class="sticky-link">Crypto Casinos</a>
+          <a href="beste-mga-casinos.html" class="sticky-link">MGA Casinos</a>
+        </nav>
+      </div>
+    </header>
     <section class="hero">
       <div class="container">
         <div class="lang-wrap">
