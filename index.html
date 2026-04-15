@@ -343,6 +343,58 @@
         margin-top: 18px;
       }
 
+      .trust-box {
+        margin-top: 18px;
+        padding: 16px;
+        border-radius: 18px;
+        background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+        border: 1px solid #fdba74;
+      }
+
+      .trust-box-title {
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #9a3412;
+        margin-bottom: 10px;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .trust-item {
+        background: rgba(255,255,255,0.9);
+        border: 1px solid #fed7aa;
+        border-radius: 14px;
+        padding: 10px 12px;
+      }
+
+      .trust-item-label {
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .trust-item-value {
+        font-size: 0.92rem;
+        font-weight: 800;
+        color: var(--dark);
+      }
+
+      .cta-note {
+        margin-top: 10px;
+        font-size: 0.78rem;
+        color: #9a3412;
+        font-weight: 700;
+      }
+
       .cta-wrap {
         text-align: right;
       }
@@ -727,6 +779,7 @@
 
     <script>
       const casinos = [
+        
         {
           name: "BitStarz",
           short: "BS",
@@ -742,6 +795,14 @@
         {
           name: "Wildz",
           rating: "4.7",
+          speedDe: "0–24h",
+          speedEn: "0–24h",
+          safetyDe: "Starke Sicherheit",
+          safetyEn: "Strong security",
+          claimDe: "Deal folgt",
+          claimEn: "Deal pending",
+          playersDe: "Neu & beliebt",
+          playersEn: "New & trending",
           short: "WZ",
           logoClass: "logo-wildz",
           bonusDe: "Bonus bis 500€",
@@ -754,6 +815,14 @@
         {
           name: "Spinz",
           rating: "4.6",
+          speedDe: "Bis 24h",
+          speedEn: "Up to 24h",
+          safetyDe: "Sicher & modern",
+          safetyEn: "Safe & modern",
+          claimDe: "Deal folgt",
+          claimEn: "Deal pending",
+          playersDe: "Wächst schnell",
+          playersEn: "Growing fast",
           short: "SZ",
           logoClass: "logo-spinz",
           bonusDe: "Bonus bis 300€",
@@ -766,6 +835,14 @@
         {
           name: "Caxino",
           rating: "4.6",
+          speedDe: "Bis 24h",
+          speedEn: "Up to 24h",
+          safetyDe: "Verifiziert",
+          safetyEn: "Verified",
+          claimDe: "Bonus heiß",
+          claimEn: "Hot bonus",
+          playersDe: "Hohe Nachfrage",
+          playersEn: "High demand",
           short: "CX",
           logoClass: "logo-caxino",
           bonusDe: "Bonus bis 400€",
@@ -778,6 +855,14 @@
         {
           name: "Chipz",
           rating: "4.5",
+          speedDe: "1–24h",
+          speedEn: "1–24h",
+          safetyDe: "Sicherer Anbieter",
+          safetyEn: "Safe operator",
+          claimDe: "Deal folgt",
+          claimEn: "Deal pending",
+          playersDe: "Beliebt",
+          playersEn: "Popular",
           short: "CZ",
           logoClass: "logo-chipz",
           bonusDe: "Bonus bis 300€",
@@ -790,6 +875,14 @@
         {
           name: "N1 Casino",
           rating: "4.7",
+          speedDe: "0–24h",
+          speedEn: "0–24h",
+          safetyDe: "Stark geprüft",
+          safetyEn: "Well reviewed",
+          claimDe: "Top Auszahlung",
+          claimEn: "Top payout",
+          playersDe: "Sehr beliebt",
+          playersEn: "Very popular",
           short: "N1",
           logoClass: "logo-n1",
           bonusDe: "Bonus bis 450€",
@@ -901,9 +994,31 @@
                 <div class="payment-pill"><span class="payment-dot"></span>${currentLang === "de" ? "Sofort" : "Instant"}</div>
                 <div class="payment-pill"><span class="payment-dot"></span>Crypto</div>
               </div>
+
+              <div class="trust-box">
+                <div class="trust-box-title">${currentLang === "de" ? "Warum Spieler hier klicken" : "Why players click here"}</div>
+                <div class="trust-grid">
+                  <div class="trust-item">
+                    <div class="trust-item-label">${currentLang === "de" ? "Auszahlung" : "Payout"}</div>
+                    <div class="trust-item-value">${currentLang === "de" ? casino.speedDe : casino.speedEn}</div>
+                  </div>
+                  <div class="trust-item">
+                    <div class="trust-item-label">${currentLang === "de" ? "Sicherheit" : "Safety"}</div>
+                    <div class="trust-item-value">${currentLang === "de" ? casino.safetyDe : casino.safetyEn}</div>
+                  </div>
+                  <div class="trust-item">
+                    <div class="trust-item-label">${currentLang === "de" ? "Bonus Status" : "Bonus status"}</div>
+                    <div class="trust-item-value">${currentLang === "de" ? casino.claimDe : casino.claimEn}</div>
+                  </div>
+                  <div class="trust-item">
+                    <div class="trust-item-label">${currentLang === "de" ? "Spieler Interesse" : "Player interest"}</div>
+                    <div class="trust-item-value">${currentLang === "de" ? casino.playersDe : casino.playersEn}</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="cta-wrap">
-              ${casino.active ? `<a class="btn" href="${casino.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">${t.cta}</a>` : `<span class="btn disabled">${t.ctaSoon}</span>`}
+              ${casino.active ? `<a class="btn" href="${casino.link}" target="_blank" rel="nofollow sponsored noopener noreferrer">${t.cta}</a><div class="cta-note">${currentLang === "de" ? "Heute besonders gefragt – schnelle Aktivierung möglich" : "High demand today – fast activation possible"}</div>` : `<span class="btn disabled">${t.ctaSoon}</span><div class="cta-note">${currentLang === "de" ? "Affiliate-Link wird gerade freigeschaltet" : "Affiliate link is being activated"}</div>`}
             </div>
           </div>
         `).join("");
